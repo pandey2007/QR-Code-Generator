@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>QR Code Generator</h1>
+    <p class="subtitle">Enter a link or text and get a QR code instantly.</p>
+
+    <label for="text">Text or URL</label>
+    <textarea id="text" rows="3" placeholder="https://example.com"></textarea>
+
+    <div class="row">
+      <div class="field">
+        <label for="size">Size</label>
+        <select id="size">
+          <option value="200">200 px</option>
+          <option value="256" selected>256 px</option>
+          <option value="320">320 px</option>
+          <option value="400">400 px</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="level">Error correction</label>
+        <select id="level">
+          <option value="L">Low</option>
+          <option value="M">Medium</option>
+          <option value="Q">Quartile</option>
+          <option value="H" selected>High</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="fg">QR color</label>
+        <input type="color" id="fg" value="#0f2a47" />
+      </div>
+      <div class="field">
+        <label for="bg">Background</label>
+        <input type="color" id="bg" value="#ffffff" />
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="generate">Generate</button>
+      <button id="download" class="secondary" disabled>Download PNG</button>
+    </div>
+
+    <p id="message" class="message"></p>
+    <div id="qr" class="qr"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
